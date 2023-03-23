@@ -4,7 +4,8 @@
     "id": "more_rural_specials",
     "name": "More Rural Specials",
     "authors": [ "Stubkan" ],
-    "description": "Removes overmap requirement of having a nearby town for many rural-type specials. 0.G Stable",
+    "description": "Removes overmap requirement of having a nearby town for many rural-type specials.",
+    "version": "0.G Stable",
     "category": "buildings",
     "dependencies": [ "dda" ]
   }
