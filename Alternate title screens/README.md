@@ -10,9 +10,9 @@ Example Image : this is the en.good-loot-ahead title screen
 
 # Instructions
 
-Download 1 or 2 en.<whatever> files from here and move them into your Cataclysm DDA /data/title folder
+Download 1 or 2 ***en.whatever*** files from here and move them into your Cataclysm DDA /data/title folder
 
-Take the one you wish to be the main title screen and rename it to *en.title*.
+Take the one you wish to be the main title screen and rename it to ***en.title***
 
-For a 2nd title screen that randomly appears sometimes, rename it to *en.alt1*.
+For a 2nd title screen that randomly appears sometimes, rename it to ***en.alt1***
 
