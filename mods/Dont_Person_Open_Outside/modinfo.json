@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "dont_person_open_outside",
+    "name": "Don't Person, Open Outside.",
+    "authors": [ "Stubkan" ],
+    "description": "Removes the ability from portal storm Person to open doors.",
+    "category": "balance",
+    "dependencies": [ "dda" ]
+  }
+]
