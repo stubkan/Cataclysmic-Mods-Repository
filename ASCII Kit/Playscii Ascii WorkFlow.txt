@@ -1,0 +1,55 @@
+
+
+Workflow to add ascii_picture items.
+
+Pick an item category - preferably a single JSON item file, such as stationary.json and pick out item ids for each one you want to do. For each item, add this below the material definition line, like so,
+
+    "id": "scissors",
+
+copy scissors
+then add below the "material" line line an "ascii_picture" definition with the same item id, (If material is not present, put it under volume)
+
+    "material": [ "aluminum", "plastic" ],
+    "ascii_picture": "scissors",
+
+Repeat for each item you wish to make a picture for, then take your list of item ids and start collecting pictures.
+
+You want high contrast, white backgrounds.  Tall rather than wide, as the ascii_picture limit is 40 wide, but no height limit.
+
+You can edit pictures to rotate, contrastify.  Get black and white images if you like, or line art, clipart.. as long
+as it can be recognised from its basic shape only.
+
+Open it in your picture editing program of your choice and paste them into a picture roughly 400 pixels wide, 800 pixels high (or a similar ratio) to help you remain within the ratio constraints.  Edit the pictures, simplify them. Rotate
+or straighten them.  Lines and edges should be clearly defined and the difference between light and dark areas very defined, as the algorithm does not do lightly shaded/coloured areas very well. Save your images into a folder.
+
+Playscii has a very very nice feature, which is the Import feature - it scans an image and attempts to convert it to an ascii character set that you provide it.  This can greatly reduce the work required to make ascii pictures.
+
+Open Playscii.  Make a new blank image, which the import process will use as a size template. I do 35 wide to ensure the 40 limit is never hit, and not to fill up the area too much. 30 high. (the charaters are 8 wide, 16 high so the height ratio will be doubled to 60) Then go change the character set (ctrl-h) to dos11x8 (or dospixel) and then you are ready to start creating ascii pictures.
+
+The character sets that I made - dos11x8 is a 11 by 8 grid reminiscent of ascii block 437, whereas dospixel is a smaller character set that only has pixel squares available to it.
+
+Import under File menu (or ctrl-m) and select 2 color bitmap, then select your image.  Select the first and last checkboxes of the options (Best Fit and Smooth scaling) and let it do the work.
+
+You probably will need to clean it up. Press spacebar to bring up the edit tools and set the background to white, forecolour to black.  Once you have cleaned the picture up you can Export it from the file menu.  Choose plain text and it will save a .txt file with it in the pure ascii format.  Note - you can't import traditional ascii/ansi coding as the font the game uses is a truetype font which does not carry ansi code, it has to be defined differently. Colour must be specified with tags that change the font colour itself.  This is outside the scope of this tutorial, as I chose to go monochrome.
+
+When you have all your txt files ready to import, put them all together and remove the .txt tag.  There are two scripts you can use.
+
+jsonify.py - which will take your raw text input and add json formatting so it is ready to paste straight into the ascii picture jsons.
+
+./jsonify.py screwdriver
+
+will create a new file called screwdriver.txt that you can copy from.  There is a second tool which is for running batch jobs for your collection of ascii pictures.
+
+./write_result.sh list
+
+Where list is the text file containing a list of every itemid/file you want imported.  You can make the list simply
+
+ls > list
+dir /b > list
+
+There are the commands for both linux or for windows by the way, just use one.  Then you may edit the file to remove any entries that shouldn't be there (such as jsonify.sh perhaps)  Then run the write_result script which will create a json file that is filled with every acsii_picture ready to copy paste in one go.
+
+Further Note :  The jsons that exist may have duplicates, since in this case, there is already a scissor ascii_picture in the ascii art folder and an ascii picture definition in the stationary.json, so you should be aware and check for these as well (or the error logs will tell you anyhow) and then you may remove or amend these so your art is the only one.
+
+
+
